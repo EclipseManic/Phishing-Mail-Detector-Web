@@ -1,0 +1,470 @@
+Return-Path: <a01072207072@gmail.com>
+Delivered-To: inquiry@mydfir.com
+Received: from srv7.swhc.ca
+	by srv7.swhc.ca with LMTP
+	id YIvQGyrXFWoTsBsAe4cVtA
+	(envelope-from <a01072207072@gmail.com>)
+	for <inquiry@mydfir.com>; Tue, 26 May 2026 13:23:54 -0400
+Return-path: <a01072207072@gmail.com>
+Envelope-to: inquiry@mydfir.com
+Delivery-date: Tue, 26 May 2026 13:23:54 -0400
+Received: from mail-dy1-f171.google.com ([74.125.82.171]:50391)
+	by srv7.swhc.ca with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.99.2)
+	(envelope-from <a01072207072@gmail.com>)
+	id 1wRvVR-00000007ewZ-31SV
+	for inquiry@mydfir.com;
+	Tue, 26 May 2026 13:23:54 -0400
+Received: by mail-dy1-f171.google.com with SMTP id 5a478bee46e88-2f03d6cf77bso11476044eec.0
+        for <inquiry@mydfir.com>; Tue, 26 May 2026 10:23:53 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1779816232; cv=none;
+        d=google.com; s=arc-20240605;
+        b=E1DkBzeHVHwtdX7M3GnmNg37Ge1JNeDmNtL0Jll7UUXTuv6icQYI+Iv9FUEnPC662l
+         fWVAAZ4xT5/WQQzM3g2D9Mvh3ZT/x6a3jqFvQlCEXrdd8Mx9aMxa13pdW7qv30qshwqL
+         T9mxeRgGYD1ujNvJx3S6QY4duKFULcsBGyYdiwekFhZFwC3WEQgYKZL+j8Rax1pEeDc/
+         1RErmz9/tfqTnS19Rk5D4GyBR6PlWqmKAQ4rdOkEdJJLvqE5Didz4MMZhui6ZfWxltI2
+         /CTNEm2nttF+RyvW5A0XCmRyXrJ8UdmZ8GKV3Ud9t2v9g5Q9zKDZdg44P+XwKolAsKMm
+         zNsg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:references:mime-version
+         :dkim-signature;
+        bh=+85P6+0ggHMNUkJEUsJ/X2cyaEicHpkzklOKCw3xIo0=;
+        fh=oRtoDySu/5EiLhWfZtBJOV6ZybTL9JliVNxPgV8rohg=;
+        b=Zyo5SUVcr20LDF4gd+3v5oeyWdbvvnTyw5ryqL/HevfX0JLNyoJSIdY8RuLB6oSeGa
+         C065rvtdCqriDL6E8axli/wDso8MV1awCyrgiiBh61rTE98ITPuWL5U9zWc7wtkY8nXs
+         wy65g1sunpkEKqLl8mtCNkwfJknE0lM7zycMSXyoNnTTjLC9Jy5KsiLxEasmSCJptRhG
+         ty+P/Z+H66NDc15LrpBWNRi4cFbxLZZSYkL38nFsbQntxkp8THWNIqd6LeuZwiQcBcom
+         RtFXIgrBodTRFEVmeTCanN5QoUEv7Zl+LhvabNJKKM04baS4QrmjsCB3ONxVcWE5OaxZ
+         bdVg==;
+        darn=mydfir.com
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1779816232; x=1780421032; darn=mydfir.com;
+        h=to:subject:message-id:date:from:references:mime-version:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=+85P6+0ggHMNUkJEUsJ/X2cyaEicHpkzklOKCw3xIo0=;
+        b=gS8Z7bP8F9CqdodHlklWHoxJV07tx39cZga425Xs7NRLtXP67wARrAHM2Z+PYLTHEC
+         Dn38f2F1EdNR0gJigkPQuxsNyDeTdsp+oGa8bCEjAsFTRr6ytO7iUK3d8u8AzYyl8FJr
+         I11yLUoWzofSBYGoFg/mJLCqaLyrIGBgMLh66qImh8G2vrc2BtSbbJGS0E/DfJD8QVpR
+         Fuq1IQEX0N3cgyXJduK9SlLBFqWCN2XCbuF8NPCj+Wxz2dwxERT16xfboX0APvGnT0Ur
+         1EPsh7EXc9rklU3qjHcOak+08jxeRLauIQvb623mNOGkhHZwRQO7x1CLT+f5UtLB1TgK
+         xWdA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1779816232; x=1780421032;
+        h=to:subject:message-id:date:from:references:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=+85P6+0ggHMNUkJEUsJ/X2cyaEicHpkzklOKCw3xIo0=;
+        b=q0shD0mVjEgK4TziaZ/EW80ZQly/a2Mu2Pa6WdNS6mZCVsGn2setFpSXa8/GPxoE6t
+         AkjZuvtQijHZ6X37ZDIh6Ix5nMD4qaM3myyvT2YNeTKokt1IaKYqTo9cXbM4ua1tGzU2
+         bBqMm1bPR3514/23QyJnojJdyn+Oco9mgE4jx0mSdGJK3bh2KtZFKAj+7V58cE9zRces
+         Ft+JOu9CM2fbtP1qErFTado77yDiGh0dYhQaTOYGkUO2w5sgEPq5So3q2jb0ZCCjzzze
+         45eQZIMCmRtqajJxdKPvBoOzlyc4KKeIDP9piq27HAkBCHdbp2Rszu4kx06P2vJaCXro
+         ZF6Q==
+X-Gm-Message-State: AOJu0YyZgFWpD/UdW7RNHCfsCxa8oGdgMO3A/VIbH53JbTjpIbR5uD05
+	HW1lXdmAVB1mKtXh1FTYWvUaUId3wrKbgSk8Iw3LfuzoZT7VVOWCgidi4yyZoZDwK1J+i86ag7W
+	R3vYl4ydDo0FgAbUFXcVCdRrBIz9wZUU5sVlIy3EuqZBs
+X-Gm-Gg: Acq92OEFP42H/rqZlF6jAh70xQ80DEMGpkEVJIfGym9Y0On4VoCIIfDuPgXH/fcWKBn
+	MN6/GMmD31/fnWwEZkm4yUHiShDIrGGraomyFsQcKhfrCqyJcRyk5ebOKuBKoVYLJ+Z/Em3tdly
+	mAV9YVd6CXQSi4W1hilctDLeEwWpnjRTTfOEsjOpyMcyRCPs1AkmTK5Ev8YIRzAIt334XccP7LR
+	+GG/D39yzTVQuBhsS7kPHs51+bhoIi4wK8uGzxfTHmz43keKmiWDp6DSLxCI8aUrRw0i6729kXH
+	MBTyKeI4Xdn5NLgL1w==
+X-Received: by 2002:a05:7301:6096:b0:2ed:2942:34ab with SMTP id
+ 5a478bee46e88-3044904df37mr8443278eec.3.1779816232213; Tue, 26 May 2026
+ 10:23:52 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAOm6fUtkm7QqE-=25yMRqWe+E-NWpNZPeq+pw_BwN1_cwUvm=w@mail.gmail.com>
+ <ED6D682C-04FD-411D-A1CF-672979332E94@mydfir.com>
+From: Shure Media <a01072207072@gmail.com>
+Date: Tue, 26 May 2026 20:23:39 +0300
+X-Gm-Features: AVHnY4KH9s5BqvrIj1c35R1tGNRUCVTKAsu-5tgXRNzn7j1TDidmredIbwDKlhE
+Message-ID: <CAOm6fUvUcXVOHqPP=GEZ-Hh5VRTmM0BSfH=fPmiM70x6M8TpZQ@mail.gmail.com>
+Subject: RE: Collab for Your YT Channel dpuxb437
+To: inquiry@mydfir.com
+Content-Type: multipart/alternative; boundary="0000000000004962f40652bbc255"
+X-Spam-Status: No, score=0.9
+X-Spam-Score: 9
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "srv7.swhc.ca",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Shure _ YouTube Creators _ Partnership SHURE. Creator
+   Partnerships Hi _ 
+ Content analysis details:   (0.9 points, 50.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: shure.com]
+                             [URI: shor.by]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.0 FROM_LOCAL_DIGITS      From: localpart has long digit sequence
+  0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
+                             digit
+                             [a01072207072(at)gmail.com]
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [a01072207072(at)gmail.com]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 KAM_SHORT              Use of a URL Shortener for very short URL
+  0.5 KAM_NUMSUBJECT         Subject ends in numbers excluding current years
+X-Spam-Flag: NO
+
+--0000000000004962f40652bbc255
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+ Shure =C3=97 YouTube Creators =E2=80=94 Partnership
+
+SHURE.
+Creator Partnerships
+
+
+Hi =F0=9F=91=8B
+
+Thanks so much for getting back to us =E2=80=94 we were really happy to hea=
+r
+you're *open
+to a partnership* with SHURE <https://www.shure.com>.
+
+We've been looking at your channel and your content style =E2=80=94 and we =
+think
+it's a great fit. As a next step, we'd love to give you access to our *Crea=
+tor
+Dashboard*, where you can explore campaign briefs, track deliverables, and
+submit content for review.
+OPEN CREATOR DASHBOARD =E2=86=92 <https://shor.by/shure>
+------------------------------
+What's in it for you
+*Fast onboarding.* Once you're in the dashboard, you'll see active
+campaigns and can claim a slot in minutes.
+*Premium gear + payment.* You keep the mic you choose =E2=80=94 SM7B, MV7+,=
+ or SM4 =E2=80=94
+and get paid for the integration.
+*Simple formats.* A 30=E2=80=9360 second native integration or a dedicated =
+review.
+No rigid scripts =E2=80=94 we trust your voice.
+*Audience perks.* Custom discount codes and giveaways for your viewers.
+
+If you have questions about rates, deliverables, or anything else =E2=80=94=
+ just
+reply to this email or ping me directly.
+
+Excited to work together =E2=9C=A8
+
+Best regards,
+
+Anna Roberts =C2=B7 Creator Partnerships, Shure
+SHURE.
+Anna Roberts
+Creator Partnerships Manager
+Legendary Sound =C2=B7 Since 1925
+
+=C2=A9 2026 Shure Incorporated. All rights reserved.
+You're receiving this email because you expressed interest in a Shure
+creator partnership.
+
+--0000000000004962f40652bbc255
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">
+<html lang=3D"en">
+<head>
+<meta charset=3D"UTF-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1">
+<title>Shure =C3=97 YouTube Creators =E2=80=94 Partnership</title>
+</head>
+
+<body style=3D"margin:0;padding:0;background:#eef0f3;font-family:Arial,Helv=
+etica,sans-serif;color:#1a1a1a">
+
+<table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"background:#eef0f3;padding:32px 0">
+<tr>
+<td align=3D"center">
+
+<table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=3D=
+"0" style=3D"width:600px;max-width:600px;background:#ffffff">
+
+ =20
+  <tr>
+    <td style=3D"background:#111111;padding:44px 32px">
+      <div style=3D"color:#ffffff;font-size:34px;font-weight:800;letter-spa=
+cing:3px">
+        SHURE<span style=3D"color:#90c601">.</span>
+      </div>
+
+      <div style=3D"color:#cfcfcf;font-size:12px;margin-top:10px;letter-spa=
+cing:4px;text-transform:uppercase">
+        Creator Partnerships
+      </div>
+    </td>
+  </tr>
+
+ =20
+  <tr>
+    <td style=3D"height:3px;background:#90c601;font-size:0;line-height:0">
+      =C2=A0
+    </td>
+  </tr>
+
+ =20
+  <tr>
+    <td style=3D"padding:40px 32px 8px 32px">
+
+      <p style=3D"margin:0 0 24px 0;font-size:17px;text-align:center;color:=
+#555">
+        Hi =F0=9F=91=8B
+      </p>
+
+      <p style=3D"margin:0 0 18px 0;font-size:15px;line-height:1.7;color:#2=
+a2a2a">
+        Thanks so much for getting back to us =E2=80=94 we were really happ=
+y to hear you&#39;re
+        <strong>open to a partnership</strong> with
+        <a href=3D"https://www.shure.com" style=3D"color:#7aad00;font-weigh=
+t:700;text-decoration:none">
+           SHURE
+        </a>.
+      </p>
+
+      <p style=3D"margin:0 0 24px 0;font-size:15px;line-height:1.7;color:#2=
+a2a2a">
+        We&#39;ve been looking at your channel and your content style =E2=
+=80=94 and we think it&#39;s a great fit.
+        As a next step, we&#39;d love to give you access to our
+        <strong>Creator Dashboard</strong>,
+        where you can explore campaign briefs, track deliverables,
+        and submit content for review.
+      </p>
+
+    </td>
+  </tr>
+
+ =20
+  <tr>
+    <td align=3D"center" style=3D"padding:8px 32px 32px 32px">
+
+      <table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0">
+        <tr>
+          <td align=3D"center" bgcolor=3D"#90c601" style=3D"border-radius:4=
+0px;background:#90c601">
+
+            <a href=3D"https://shor.by/shure" target=3D"_blank" style=3D"fo=
+nt-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:20px;font-w=
+eight:800;letter-spacing:1px;text-transform:uppercase;color:#0a0a0a;text-de=
+coration:none;padding:18px 42px;display:inline-block;border-radius:40px;bac=
+kground:#90c601;border:1px solid #90c601">
+              OPEN CREATOR DASHBOARD =E2=86=92
+            </a>
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+
+ =20
+  <tr>
+    <td style=3D"padding:0 32px">
+      <hr style=3D"border:none;border-top:1px solid #ececec;margin:0">
+    </td>
+  </tr>
+
+ =20
+  <tr>
+    <td style=3D"padding:28px 32px 16px 32px">
+
+      <h3 style=3D"color:#1a1a1a;font-size:20px;margin:0 0 20px 0;font-weig=
+ht:800">
+        What&#39;s in it for you
+      </h3>
+
+      <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D"font-size:15px;line-height:1.7;color:#2a2a2a">
+
+        <tr>
+          <td style=3D"padding:10px 14px 10px 0;vertical-align:top;width:20=
+px">
+            <span style=3D"display:inline-block;width:8px;height:8px;border=
+-radius:50%;background:#90c601"></span>
+          </td>
+
+          <td style=3D"padding:10px 0">
+            <strong>Fast onboarding.</strong>
+            Once you&#39;re in the dashboard, you&#39;ll see active campaig=
+ns
+            and can claim a slot in minutes.
+          </td>
+        </tr>
+
+        <tr>
+          <td style=3D"padding:10px 14px 10px 0;vertical-align:top;width:20=
+px">
+            <span style=3D"display:inline-block;width:8px;height:8px;border=
+-radius:50%;background:#90c601"></span>
+          </td>
+
+          <td style=3D"padding:10px 0">
+            <strong>Premium gear + payment.</strong>
+            You keep the mic you choose =E2=80=94
+            <span style=3D"color:#7aad00;font-weight:700">
+              SM7B, MV7+, or SM4
+            </span>
+            =E2=80=94 and get paid for the integration.
+          </td>
+        </tr>
+
+        <tr>
+          <td style=3D"padding:10px 14px 10px 0;vertical-align:top;width:20=
+px">
+            <span style=3D"display:inline-block;width:8px;height:8px;border=
+-radius:50%;background:#90c601"></span>
+          </td>
+
+          <td style=3D"padding:10px 0">
+            <strong>Simple formats.</strong>
+            A 30=E2=80=9360 second native integration or a dedicated review=
+.
+            No rigid scripts =E2=80=94 we trust your voice.
+          </td>
+        </tr>
+
+        <tr>
+          <td style=3D"padding:10px 14px 10px 0;vertical-align:top;width:20=
+px">
+            <span style=3D"display:inline-block;width:8px;height:8px;border=
+-radius:50%;background:#90c601"></span>
+          </td>
+
+          <td style=3D"padding:10px 0">
+            <strong>Audience perks.</strong>
+            Custom
+            <span style=3D"color:#7aad00;font-weight:700">
+              discount codes
+            </span>
+            and giveaways for your viewers.
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+
+ =20
+  <tr>
+    <td style=3D"padding:8px 32px 28px 32px">
+
+      <p style=3D"margin:0 0 14px 0;font-size:15px;line-height:1.7;text-ali=
+gn:center;color:#2a2a2a">
+        If you have questions about rates, deliverables, or anything else =
+=E2=80=94
+        just reply to this email or ping me directly.
+      </p>
+
+      <p style=3D"margin:0;font-size:15px;line-height:1.6;text-align:center=
+;color:#7aad00;font-weight:700">
+        Excited to work together =E2=9C=A8
+      </p>
+
+    </td>
+  </tr>
+
+ =20
+  <tr>
+    <td style=3D"padding:0 32px 24px 32px">
+
+      <p style=3D"margin:0 0 6px 0;font-size:15px;color:#555">
+        Best regards,
+      </p>
+
+      <p style=3D"margin:0;font-size:16px;color:#1a1a1a;font-weight:700">
+        Anna Roberts
+        <span style=3D"color:#90c601">=C2=B7</span>
+        <span style=3D"font-weight:500;color:#555">
+          Creator Partnerships, Shure
+        </span>
+      </p>
+
+    </td>
+  </tr>
+
+ =20
+  <tr>
+    <td style=3D"padding:0 32px 36px 32px">
+
+      <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D"background:#111111">
+        <tr>
+          <td style=3D"padding:24px 26px;color:#ffffff">
+
+            <div style=3D"font-size:22px;font-weight:800;letter-spacing:2px=
+">
+              SHURE<span style=3D"color:#90c601">.</span>
+            </div>
+
+            <div style=3D"height:1px;background:#2b2b2b;margin:14px 0"></di=
+v>
+
+            <div style=3D"font-size:16px;font-weight:600">
+              Anna Roberts
+            </div>
+
+            <div style=3D"font-size:11px;color:#bdbdbd;margin-top:4px;lette=
+r-spacing:2px;text-transform:uppercase">
+              Creator Partnerships Manager
+            </div>
+
+            <div style=3D"font-size:11px;color:#90c601;margin-top:16px;lett=
+er-spacing:3px;text-transform:uppercase;font-weight:600">
+              Legendary Sound =C2=B7 Since 1925
+            </div>
+
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+
+ =20
+  <tr>
+    <td style=3D"height:3px;background:#90c601;font-size:0;line-height:0">
+      =C2=A0
+    </td>
+  </tr>
+
+  <tr>
+    <td style=3D"padding:22px 32px 28px 32px;text-align:center;color:#9a9a9=
+a;font-size:11px;line-height:1.6">
+
+      =C2=A9 2026 Shure Incorporated. All rights reserved.<br>
+      You&#39;re receiving this email because you expressed interest in a S=
+hure creator partnership.
+
+    </td>
+  </tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html></div>
+
+--0000000000004962f40652bbc255--

@@ -1,0 +1,144 @@
+Return-Path: <a01072207072@gmail.com>
+Delivered-To: inquiry@mydfir.com
+Received: from srv7.swhc.ca
+	by srv7.swhc.ca with LMTP
+	id AFzYEeCvFGqb7wEAe4cVtA
+	(envelope-from <a01072207072@gmail.com>)
+	for <inquiry@mydfir.com>; Mon, 25 May 2026 16:24:00 -0400
+Return-path: <a01072207072@gmail.com>
+Envelope-to: inquiry@mydfir.com
+Delivery-date: Mon, 25 May 2026 16:24:00 -0400
+Received: from mail-dy1-f176.google.com ([74.125.82.176]:52714)
+	by srv7.swhc.ca with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.99.2)
+	(envelope-from <a01072207072@gmail.com>)
+	id 1wRbqB-00000000mzE-3tgT
+	for inquiry@mydfir.com;
+	Mon, 25 May 2026 16:24:00 -0400
+Received: by mail-dy1-f176.google.com with SMTP id 5a478bee46e88-2ee990e8597so24000711eec.1
+        for <inquiry@mydfir.com>; Mon, 25 May 2026 13:23:59 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1779740639; cv=none;
+        d=google.com; s=arc-20240605;
+        b=R16jjrMOHfde1A6tCveGKvKbFZPXmK3eZFIS+4EA/Zxt9Ti993BB1vEceCSV14+v5+
+         6wBMK10DOQePLRayUm1Y9f4SNSqLpwuTdad6bDUY4DL8EiDUifXZFsewsuiQS2Pa+Y4U
+         MOchVOBxsEiEg3UpcKEsgdaSCPmJcPwFj90TV6RU+zshJA7/bCp1d/q0YBaSh07p8qpI
+         ihxX5WskRUkHfVziRMmtE8PcwSgQDqyUA99FRSSaN+J0aP/QiYPXTy6ll4virXAw2uIf
+         YELJ9qr/f/aShH8jROetlDAXBIwAj8BMYqhwZHyK7ZakiOo10Ztet7S+GKu+7ReeT/9r
+         Dr8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=WHZKZDs6O6gIGoM+Dmh/siqxY++36gR2hafE2rdwRP8=;
+        fh=oRtoDySu/5EiLhWfZtBJOV6ZybTL9JliVNxPgV8rohg=;
+        b=k4RBg+uFkHsGTs/+6VsATOzPJ/Nyy8tvt2jp72xZfeknfEYaIMdIIQu6Su3uLCi6ia
+         yUXJh/DsdnNJfUqLAONZGzg3a/6YTQRXYgTeWnU3LiwB0/fBUH1TQUwuSZ5c8BzIc266
+         HMduZT8W9kgL3+RQtLhngWbn7SHovkiS4HBK4raZ+zlTzlYAHMUEa+isDB+8kE30eDVm
+         JO2AZD5diVWKbCdl81NS7+IptpzlDNjtR4EufS/5jUh/EsUQs3Mhur5Ch5ei9RIyb9XU
+         WqHVnCD18OxpvsJxTB5nKLRDkO9uh1XewNJIOMFFo277RCX7Y1veSF55ouf9go+HpDJb
+         D3+w==;
+        darn=mydfir.com
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1779740639; x=1780345439; darn=mydfir.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=WHZKZDs6O6gIGoM+Dmh/siqxY++36gR2hafE2rdwRP8=;
+        b=kw3Bb+6Ri3sapcIccP4LuDa4yWDGP+dt2dSgdJGeitsUJFWJwOgSs86qV1Pqmw72eA
+         WogGY1JYDzbjbfGt4+coo8+lk1c1Q/si0iXuaIFCJJetajJzeahC8oTquwV29kgVYmrF
+         KJQHNhUc9UhbUBimQ94D+9gJKd0sp6faVa8XotEyByDsogTfiT7cd41B/ubiwKS9Lc53
+         an3Uq6R9Au9vWznTuGiIuJGQOAPGfiR4Yy/neN0/Vc1EaQ3YdmMbd8MBMm4hRp9083nh
+         uxWqWwzsEyxO7EAyXg4lPnhB4gNuATPqwDZVtTDcrHc2kSzxlWw7M74jgvIpMwuPaVli
+         +m+Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1779740639; x=1780345439;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=WHZKZDs6O6gIGoM+Dmh/siqxY++36gR2hafE2rdwRP8=;
+        b=hpmm9pZBJsQM+Ch0jmbVpOek3xoKfUDEjXAuB+YgEoJuMWtuTAQF7CdEfvgZqlTQsZ
+         za+gaQCxP1ZTpEl6pz6/zrsP6oI/6QpTzYKWckYCN31q23TbjLqa541OwqiHbLrJSdIf
+         4b8BZ9Mquejz3vC3KAUuCvP0VvD5QHltyxv96v2mvjR0TotQCyBBDO1wXGnHtyBr2Qf1
+         LeaJ/m4c5IOmqNdymFjoxxsJ462D4p8ysq8M6Jkdg2Iu/I4iShaiHzzFQuM9HVmzS17j
+         fByB4L9KYcfwgle9FScZk5yn1PxAgszaDmLSmWhKye8LUNjuZvOrYQJy2NcWCvBiwUAW
+         aTqQ==
+X-Gm-Message-State: AOJu0Yx5UV6kaBOitL/vlr7KpXsCfy87QQSOTDXahRl+LG8g7MFz800I
+	5OpEJcQ8Av9kiXKzuIRfpM1xIsRIyxRr7HMRy8MtQ3/0O6tXwhkQfqv0Cgi2b3b80DymIpYuL4f
+	rEDrZukuc+acVpbyUl63OOY61ZXwm8iCJ6z+WTHrQSw==
+X-Gm-Gg: Acq92OEIUnO4oo+uhmX5sJIv8cjfcLQFBn7HYd9G7braqGpc+TR/NvDhVYN4o5QLp0M
+	76n+vfF2JwkhH4IWtZaS74wvlIVc1/LygxI2wD953QuTo9QTheWpKAG3Qxwhgeld9ZGN51A1eKi
+	p1QU6J3fnpcIl8YBem+K/eHtSkP6JLhYm8DsRSchazNzYjwc5GSjuTJIOXQwkSeS47R2JF4d9OQ
+	Ma4HasA5IpaYgVykEeApSnpYmLDj+LewOf21w1wnwEChHCrmwWPdvHAAUGGPN1k9viuQUxRq2D+
+	4Is8JLdthjn8aGF8xg==
+X-Received: by 2002:a05:7301:9f08:b0:2d3:f43c:d684 with SMTP id
+ 5a478bee46e88-30448fbf1aemr6585052eec.2.1779740638569; Mon, 25 May 2026
+ 13:23:58 -0700 (PDT)
+MIME-Version: 1.0
+From: Shure Media <a01072207072@gmail.com>
+Date: Mon, 25 May 2026 23:23:46 +0300
+X-Gm-Features: AVHnY4Jmu6nZr4w50XkUhd1JEBBUww9fwti7zTbio7cuP3kXbFX5Fv905OXYg14
+Message-ID: <CAOm6fUtkm7QqE-=25yMRqWe+E-NWpNZPeq+pw_BwN1_cwUvm=w@mail.gmail.com>
+Subject: Collab for Your YT Channel dpuxb437
+To: inquiry@mydfir.com
+Content-Type: multipart/alternative; boundary="0000000000008de96e0652aa288d"
+X-Spam-Status: No, score=0.9
+X-Spam-Score: 9
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "srv7.swhc.ca",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Hi there! Andrew, and I'm speaking on Shure Media's behalf.
+    We follow your channel and feel our product would be a top-notch fit for
+   your followers. Let's open a discussion about what we'd pay for pla [...] 
+ Content analysis details:   (0.9 points, 50.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.0 FROM_LOCAL_DIGITS      From: localpart has long digit sequence
+  0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
+                             digit
+                             [a01072207072(at)gmail.com]
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [a01072207072(at)gmail.com]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.5 KAM_NUMSUBJECT         Subject ends in numbers excluding current years
+X-Spam-Flag: NO
+
+--0000000000008de96e0652aa288d
+Content-Type: text/plain; charset="UTF-8"
+
+Hi there! Andrew, and I'm speaking on Shure Media's behalf. We follow your
+channel and feel our product would be a top-notch fit for your followers.
+Let's open a discussion about what we'd pay for placement in one of your
+videos.
+
+Would you be willing to explore the specifics in a more focused way?
+
+--0000000000008de96e0652aa288d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hi there! Andrew, and I&#39;m speaking on Shure Media&#39;=
+s behalf. We follow your channel and feel our product would be a top-notch =
+fit for your followers.   <br>   Let&#39;s open a discussion about what we&=
+#39;d pay for placement in one of your videos.
+<br>
+<br>
+
+   Would you be willing to explore the specifics in a more focused way?  <b=
+r>   <br>=20
+
+<br>
+=20
+<br>
+
+<br>
+</div>
+
+--0000000000008de96e0652aa288d--

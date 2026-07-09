@@ -1,0 +1,1216 @@
+Delivered-To: manichand.gupta.contact@gmail.com
+Received: by 2002:a05:7508:2a82:b0:ea:453a:1a5 with SMTP id gb2csp143073gbb;
+        Fri, 29 May 2026 00:42:26 -0700 (PDT)
+X-Received: by 2002:a05:7300:2154:b0:2d9:6373:ad22 with SMTP id 5a478bee46e88-304eb13a8ecmr794282eec.12.1780040545450;
+        Fri, 29 May 2026 00:42:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1780040545; cv=none;
+        d=google.com; s=arc-20240605;
+        b=LJoa18X/VJKAuUAGRGTIByHLdSh58f6Y0kxkGXDGHL0F5b1z4TNLTeWia5lvhxCYdK
+         hFEeTaAJd2omujyU+XX8Ny+lbyJk/ZwE8/pqthbq0kGYAHNYIEd+HiGBv5+tRoO/x8JS
+         svz6xh+6tBUWsLRL4f1V5JuvrI5QwFrQwu6YTaHG7lJlrR01WmLIOztdlYN/YM/eoyt6
+         5+K7rGFqcMAamLc978ZphwDkGOlNUv7gHCMq4UMLB5yZOwNxUazsWcuGAFETKB/VTRmd
+         rGfB9E19MGOubFzJ3vedZjop/v/46M4x7EQgMCqlsACbNX8/f+Tm5D2rHBY5pkGpKEEe
+         19WQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:subject:in-reply-to:message-id:to:from:date
+         :feedback-id:dkim-signature:dkim-signature;
+        bh=0IU2hcIPz5OM6JF0YcIcHeV1lSDiVYx0gk/omRa5Uig=;
+        fh=vkuYLMcEk2/dAldRb4jaotLnq0+RDduuFFGbqQolBRI=;
+        b=Qt7Err7cfKCur0leEVX5utb64ew6Ejyid0uOiWB1OS5By4x+gyHovgApSz0D3POIeQ
+         3kMrRe53x90PIX88yyrjcl5lSWpH4zo3u/ZmTZWfAIhgZDT5RCAdQibhlPkWX13KQ38r
+         xmEiy55MxZxdMjEZrF92Sh1Eor99YUnrU71R3DhX3AajDFLpPhQABiw6Lf+dQCuflvHC
+         +bpTLFOI7LVkp/xqmWRrx1YAW3DmfPrARhF3gs+lQ/BKkDbTtuygR2pSmjisZdjip2tJ
+         ffHtghUblxZEkbbcLErG1l3bv07NDNVVyR+i2EDSMAjpeqBc2+GL/MMMIwm7zVE+quew
+         cjiQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@secureserver.net header.s=secureserver1 header.b=ivau9uPB;
+       dkim=pass header.i=@naukrijobs.co header.s=secureserver1 header.b=CsNIrcm3;
+       spf=pass (google.com: domain of info@naukrijobs.co designates 173.201.192.56 as permitted sender) smtp.mailfrom=info@naukrijobs.co;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=naukrijobs.co
+Return-Path: <info@naukrijobs.co>
+Received: from osplwbeout01-07.prod.phx3.secureserver.net (osplwbeout01-07.prod.phx3.secureserver.net. [173.201.192.56])
+        by mx.google.com with ESMTPS id 5a478bee46e88-304ed2db9b5si2275456eec.19.2026.05.29.00.42.24
+        for <manichand.gupta.contact@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 29 May 2026 00:42:25 -0700 (PDT)
+Received-SPF: pass (google.com: domain of info@naukrijobs.co designates 173.201.192.56 as permitted sender) client-ip=173.201.192.56;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@secureserver.net header.s=secureserver1 header.b=ivau9uPB;
+       dkim=pass header.i=@naukrijobs.co header.s=secureserver1 header.b=CsNIrcm3;
+       spf=pass (google.com: domain of info@naukrijobs.co designates 173.201.192.56 as permitted sender) smtp.mailfrom=info@naukrijobs.co;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=naukrijobs.co
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=secureserver.net;
+	s=secureserver1; t=1780040544;
+	bh=0IU2hcIPz5OM6JF0YcIcHeV1lSDiVYx0gk/omRa5Uig=;
+	h=Date:From:To:In-Reply-To:Subject;
+	b=ivau9uPBpVlx9FJkllV6JtnnHxV1js+BmG9h243ZeVKaZrxya11sVS5GuGW3aYtz4
+	 i5zDLVMY/yfxC7xIbokGLTqPN+juDi8H4qkvhtp/X1fA13U81aihtaldO2SFyX8K8g
+	 sa25g+0wy8OXr/N8jdOkXEUR7CnJ5e0pkQPoL0iS334KO5WeKTC/xN5OJ4LyrI9jLQ
+	 ImwsDhareuHsCbn7i2AXkDB8gBtSAezqSXiZVMmm6FF3KaKM9BLfjZJzzgoUpo6RLz
+	 9qaMjZAgo/8VOffFa5wathB3b3kzh3sTl8i8wKEV6mhSh2ByqVaEtzJcFib3CUkyic
+	 TaLALygXHvFLw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=naukrijobs.co;
+	s=secureserver1; t=1780040544;
+	bh=0IU2hcIPz5OM6JF0YcIcHeV1lSDiVYx0gk/omRa5Uig=;
+	h=Date:From:To:In-Reply-To:Subject;
+	b=CsNIrcm3thJciVut7Hz3URDnZyRV+JFq7P7VpPyeBTAYy+I8SepV6Y41Ufu3mjphl
+	 g7DN2NqmNBjfPcvu2x6adMft/OGQqHBxbz/WiWGWvvTN7nkte7bgX49Orc1oNFH+3i
+	 clwdxIPVcfAK/191x9YV6UtZo5gxPTRhamL91gygxPP93iXGgVfBdDU+p2IS9xQ25e
+	 05tivX8ZgXlgYiDP4DIU7cokDv67l5DAq28+tVP9Y0hTqHVrKVV3Tyr8zFruc188oh
+	 qe8vhk3kJV3WO3k3XGZ9OGNd+cOTWZV3dJyRhdROC9pngFJjuJJfj1SybHamGqhlvc
+	 1Sht52sKx35Jw==
+Feedback-ID: d0539d281f056fbffc2d107bed1652e7:naukrijobs.co:ssnet
+X-CMAE-Analysis: v=2.4 cv=LPzMhpW9 c=1 sm=1 tr=0 ts=6a194360
+ a=OEr99OIwWTgk29Xyw0yjAA==:117 a=OEr99OIwWTgk29Xyw0yjAA==:17
+ a=ags4ppSPx54A:10 a=MKtGQD3n3ToA:10 a=1oJP67jkp3AA:10 a=BMxJXzqDAAAA:8
+ a=CIpa5kweAAAA:8 a=58CQKFXBTLBOjxv7q7QA:9 a=7GSdoToIjhWXVcFp:21
+ a=lqcHg5cX4UMA:10 a=QEXdDO2ut3YA:10 a=-FEs8UIgK8oA:10
+ a=2jcf80gHMpRAQKpdMBAA:9 a=IKIoO-ieCDEA:10 a=7qx8gLC0iM8A:10
+ a=CyDbrGLRJ-AA:10 a=X1c0k9nRQnjIoBfxGzdG:22 a=i4jClUtQcpNurfyjASy_:22
+ a=X0qombyAlGba11bGhn4G:22 a=j2lFa4aZAPkQifO2b3ji:22 a=NWVoK91CQySWRX1oVYDe:22
+X-SECURESERVER-ACCT: info@naukrijobs.co
+X-SID: SrrLwOdwxUztP
+Date: Fri, 29 May 2026 07:42:24 +0000 (UTC)
+From: Naukri Fastforward <info@naukrijobs.co>
+To: Manichand Gupta <manichand.gupta.contact@gmail.com>
+Message-ID: <212025978689069056.0.v2@titan.email>
+In-Reply-To: <CAAZXq-ThDRyGt7VmbMvu8HF2dzMAGu7_iXn3WsSVgE9exLkd8g@mail.gmail.com>
+Subject: Candidate Application Form & JD
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_5919378_1564832370.1780040543650"
+X-Titan-User-Uid: eyJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiZGlyIn0..66tG0Jn8A_NEHBAI.hyP6-ZyFXC3ty-6QAlqZT84bDaGMjLbx15HWvsd8Yt5QQmRWiG1z8IpAusxOckcfjoXR8assBE8b3aKODr8j76s3FgCi5NtOCrVAkrCm.zvRq1OgunN5FXtuB7Flvlw
+X-Titan-User: info@naukrijobs.co
+X-Originating-IP: 49.14.141.98
+X-CMAE-Envelope: MS4xfJESN+5Dgw4exzItdVN/2Tqk4MA/vPPm6u6nhIyo6AW5cS5xnKY0UNbr09nrfZqUsFWeXlj1uOcO8+t0J294Bum56fRiLiaWXfli3gz4Rs+YM4Rbhxd3
+ PQUDpNyW2BLIITzlZ34/bR4qxzhPNnMtv+ZUCsH1mL/ALIe1ktn3AocVZ3HhgGhV3sbEj6SguHHIzW2Uct27Fj0B2+hhT75V/Rs=
+
+------=_Part_5919378_1564832370.1780040543650
+Content-Type: multipart/related; 
+	boundary="----=_Part_5919377_2012165369.1780040543650"
+
+------=_Part_5919377_2012165369.1780040543650
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+<div style=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-=
+system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial,=
+ sans-serif; font-size: 14.5px; font-style: normal; font-variant-ligatures:=
+ normal; font-variant-caps: normal; font-weight: 400; letter-spacing: norma=
+l; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; w=
+idows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: n=
+ormal; text-decoration-thickness: initial; text-decoration-style: initial; =
+text-decoration-color: initial; background-color: rgb(255, 255, 255); box-s=
+izing: border-box; user-select: inherit; scrollbar-color: auto;" id=3D"isPa=
+sted" fr-original-style=3D"max-width: 100%; color: rgb(51, 51, 51); font-fa=
+mily: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helv=
+etica, Arial, sans-serif; font-size: 14.5px; font-style: normal; font-varia=
+nt-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-s=
+pacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-trans=
+form: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; w=
+hite-space: normal; text-decoration-thickness: initial; text-decoration-sty=
+le: initial; text-decoration-color: initial; background-color: rgb(255, 255=
+, 255); box-sizing: border-box; user-select: inherit; scrollbar-color: auto=
+;">Dear Manichand ,</div><div style=3D"max-width: 100%; color: rgb(51, 51, =
+51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, =
+Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5px; font-style: normal=
+; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 4=
+00; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px=
+; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-w=
+idth: 0px; white-space: normal; text-decoration-thickness: initial; text-de=
+coration-style: initial; text-decoration-color: initial; background-color: =
+rgb(255, 255, 255); box-sizing: border-box; user-select: inherit; scrollbar=
+-color: auto;" fr-original-style=3D"max-width: 100%; color: rgb(51, 51, 51)=
+; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubu=
+ntu, Helvetica, Arial, sans-serif; font-size: 14.5px; font-style: normal; f=
+ont-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;=
+ letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; t=
+ext-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-widt=
+h: 0px; white-space: normal; text-decoration-thickness: initial; text-decor=
+ation-style: initial; text-decoration-color: initial; background-color: rgb=
+(255, 255, 255); box-sizing: border-box; user-select: inherit; scrollbar-co=
+lor: auto;"><br style=3D"user-select: inherit; scrollbar-color: auto; box-s=
+izing: border-box;" fr-original-style=3D"user-select: inherit; scrollbar-co=
+lor: auto; box-sizing: border-box;"></div><div style=3D"max-width: 100%; co=
+lor: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot=
+;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5px; f=
+ont-style: normal; font-variant-ligatures: normal; font-variant-caps: norma=
+l; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start;=
+ text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -web=
+kit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness:=
+ initial; text-decoration-style: initial; text-decoration-color: initial; b=
+ackground-color: rgb(255, 255, 255); box-sizing: border-box; user-select: i=
+nherit; scrollbar-color: auto;" fr-original-style=3D"max-width: 100%; color=
+: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5px; font=
+-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; =
+font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; te=
+xt-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit=
+-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: in=
+itial; text-decoration-style: initial; text-decoration-color: initial; back=
+ground-color: rgb(255, 255, 255); box-sizing: border-box; user-select: inhe=
+rit; scrollbar-color: auto;">Your profile has been shortlisted for&nbsp;<st=
+rong style=3D"font-weight: 600; box-sizing: border-box; user-select: inheri=
+t; scrollbar-color: auto;" fr-original-style=3D"font-weight: 600; box-sizin=
+g: border-box; user-select: inherit; scrollbar-color: auto;">=E2=80=98=E2=
+=80=99HCL Technologies Ltd.=E2=80=99=E2=80=99</strong>&nbsp; &nbsp;!!!!!!!!=
+&nbsp;<br style=3D"box-sizing: border-box; user-select: inherit; scrollbar-=
+color: auto;" fr-original-style=3D"box-sizing: border-box; user-select: inh=
+erit; scrollbar-color: auto;"><br style=3D"box-sizing: border-box; user-sel=
+ect: inherit; scrollbar-color: auto;" fr-original-style=3D"box-sizing: bord=
+er-box; user-select: inherit; scrollbar-color: auto;">HCL Training &amp; St=
+affing Services (HCL), an in-house training and staffing arm of HCL aims to=
+ enable fresh graduates to launch successful careers in IT Industries. LEAP=
+ is a 15 to 45, full time, which addresses critical skill required for desi=
+red transformation from student to a working professional.&nbsp;</div><div =
+style=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-syste=
+m, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans=
+-serif; font-size: 14.5px; font-style: normal; font-variant-ligatures: norm=
+al; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; or=
+phans: 2; text-align: start; text-indent: 0px; text-transform: none; widows=
+: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal=
+; text-decoration-thickness: initial; text-decoration-style: initial; text-=
+decoration-color: initial; background-color: rgb(255, 255, 255); box-sizing=
+: border-box; user-select: inherit; scrollbar-color: auto;" fr-original-sty=
+le=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-system, =
+BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-se=
+rif; font-size: 14.5px; font-style: normal; font-variant-ligatures: normal;=
+ font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orpha=
+ns: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2=
+; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; t=
+ext-decoration-thickness: initial; text-decoration-style: initial; text-dec=
+oration-color: initial; background-color: rgb(255, 255, 255); box-sizing: b=
+order-box; user-select: inherit; scrollbar-color: auto;">&nbsp;</div><div s=
+tyle=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-system=
+, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-=
+serif; font-size: 14.5px; font-style: normal; font-variant-ligatures: norma=
+l; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orp=
+hans: 2; text-align: start; text-indent: 0px; text-transform: none; widows:=
+ 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;=
+ text-decoration-thickness: initial; text-decoration-style: initial; text-d=
+ecoration-color: initial; background-color: rgb(255, 255, 255); box-sizing:=
+ border-box; user-select: inherit; scrollbar-color: auto;" fr-original-styl=
+e=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-system, B=
+linkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-ser=
+if; font-size: 14.5px; font-style: normal; font-variant-ligatures: normal; =
+font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphan=
+s: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2;=
+ word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; te=
+xt-decoration-thickness: initial; text-decoration-style: initial; text-deco=
+ration-color: initial; background-color: rgb(255, 255, 255); box-sizing: bo=
+rder-box; user-select: inherit; scrollbar-color: auto;">Please walking with=
+ profile &amp; one passport size photograph.</div><div style=3D"max-width: =
+100%; color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFon=
+t, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 1=
+4.5px; font-style: normal; font-variant-ligatures: normal; font-variant-cap=
+s: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align=
+: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0=
+px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-th=
+ickness: initial; text-decoration-style: initial; text-decoration-color: in=
+itial; background-color: rgb(255, 255, 255); box-sizing: border-box; user-s=
+elect: inherit; scrollbar-color: auto;" id=3D"isPasted" fr-original-style=
+=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-system, Bl=
+inkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-seri=
+f; font-size: 14.5px; font-style: normal; font-variant-ligatures: normal; f=
+ont-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans=
+: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; =
+word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; tex=
+t-decoration-thickness: initial; text-decoration-style: initial; text-decor=
+ation-color: initial; background-color: rgb(255, 255, 255); box-sizing: bor=
+der-box; user-select: inherit; scrollbar-color: auto;">Salary =E2=80=93 25k=
+ - 30<span style=3D"font-size: 11pt; font-family: sans-serif, arial; box-si=
+zing: border-box; user-select: inherit; scrollbar-color: auto;" fr-original=
+-style=3D"font-size: 11pt; font-family: sans-serif, arial; box-sizing: bord=
+er-box; user-select: inherit; scrollbar-color: auto;">k</span><br style=3D"=
+box-sizing: border-box; user-select: inherit; scrollbar-color: auto;" fr-or=
+iginal-style=3D"box-sizing: border-box; user-select: inherit; scrollbar-col=
+or: auto;">Designation: Security Analyst</div><div style=3D"max-width: 100%=
+; color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &=
+quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5p=
+x; font-style: normal; font-variant-ligatures: normal; font-variant-caps: n=
+ormal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: st=
+art; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickn=
+ess: initial; text-decoration-style: initial; text-decoration-color: initia=
+l; background-color: rgb(255, 255, 255); box-sizing: border-box; user-selec=
+t: inherit; scrollbar-color: auto;" fr-original-style=3D"max-width: 100%; c=
+olor: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quo=
+t;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5px; =
+font-style: normal; font-variant-ligatures: normal; font-variant-caps: norm=
+al; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start=
+; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -we=
+bkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness=
+: initial; text-decoration-style: initial; text-decoration-color: initial; =
+background-color: rgb(255, 255, 255); box-sizing: border-box; user-select: =
+inherit; scrollbar-color: auto;"><br style=3D"user-select: inherit; scrollb=
+ar-color: auto; box-sizing: border-box;" fr-original-style=3D"user-select: =
+inherit; scrollbar-color: auto; box-sizing: border-box;"></div><div style=
+=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-system, Bl=
+inkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-seri=
+f; font-size: 14.5px; font-style: normal; font-variant-ligatures: normal; f=
+ont-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans=
+: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; =
+word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; tex=
+t-decoration-thickness: initial; text-decoration-style: initial; text-decor=
+ation-color: initial; background-color: rgb(255, 255, 255); box-sizing: bor=
+der-box; user-select: inherit; scrollbar-color: auto;" fr-original-style=3D=
+"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-system, Blink=
+MacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; =
+font-size: 14.5px; font-style: normal; font-variant-ligatures: normal; font=
+-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2=
+; text-align: start; text-indent: 0px; text-transform: none; widows: 2; wor=
+d-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-d=
+ecoration-thickness: initial; text-decoration-style: initial; text-decorati=
+on-color: initial; background-color: rgb(255, 255, 255); box-sizing: border=
+-box; user-select: inherit; scrollbar-color: auto;">Recruitment Procedure:&=
+nbsp;</div><div style=3D"max-width: 100%; color: rgb(51, 51, 51); font-fami=
+ly: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvet=
+ica, Arial, sans-serif; font-size: 14.5px; font-style: normal; font-variant=
+-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spa=
+cing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transfo=
+rm: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; whi=
+te-space: normal; text-decoration-thickness: initial; text-decoration-style=
+: initial; text-decoration-color: initial; background-color: rgb(255, 255, =
+255); box-sizing: border-box; user-select: inherit; scrollbar-color: auto;"=
+ fr-original-style=3D"max-width: 100%; color: rgb(51, 51, 51); font-family:=
+ -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica=
+, Arial, sans-serif; font-size: 14.5px; font-style: normal; font-variant-li=
+gatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacin=
+g: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform:=
+ none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-=
+space: normal; text-decoration-thickness: initial; text-decoration-style: i=
+nitial; text-decoration-color: initial; background-color: rgb(255, 255, 255=
+); box-sizing: border-box; user-select: inherit; scrollbar-color: auto;">o =
+Communication Interview&nbsp;<br style=3D"box-sizing: border-box; user-sele=
+ct: inherit; scrollbar-color: auto;" fr-original-style=3D"box-sizing: borde=
+r-box; user-select: inherit; scrollbar-color: auto;">0 HR&nbsp;<br style=3D=
+"box-sizing: border-box; user-select: inherit; scrollbar-color: auto;" fr-o=
+riginal-style=3D"box-sizing: border-box; user-select: inherit; scrollbar-co=
+lor: auto;"><br style=3D"box-sizing: border-box; user-select: inherit; scro=
+llbar-color: auto;" fr-original-style=3D"box-sizing: border-box; user-selec=
+t: inherit; scrollbar-color: auto;">We are hiring for Following Position:&n=
+bsp;<br style=3D"box-sizing: border-box; user-select: inherit; scrollbar-co=
+lor: auto;" fr-original-style=3D"box-sizing: border-box; user-select: inher=
+it; scrollbar-color: auto;">o Application Software Maintenance Software Tra=
+inee&nbsp;</div><div style=3D"max-width: 100%; color: rgb(51, 51, 51); font=
+-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, H=
+elvetica, Arial, sans-serif; font-size: 14.5px; font-style: normal; font-va=
+riant-ligatures: normal; font-variant-caps: normal; font-weight: 400; lette=
+r-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-tr=
+ansform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px=
+; white-space: normal; text-decoration-thickness: initial; text-decoration-=
+style: initial; text-decoration-color: initial; background-color: rgb(255, =
+255, 255); box-sizing: border-box; user-select: inherit; scrollbar-color: a=
+uto;" fr-original-style=3D"max-width: 100%; color: rgb(51, 51, 51); font-fa=
+mily: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helv=
+etica, Arial, sans-serif; font-size: 14.5px; font-style: normal; font-varia=
+nt-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-s=
+pacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-trans=
+form: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; w=
+hite-space: normal; text-decoration-thickness: initial; text-decoration-sty=
+le: initial; text-decoration-color: initial; background-color: rgb(255, 255=
+, 255); box-sizing: border-box; user-select: inherit; scrollbar-color: auto=
+;">o Data Analyst</div><div style=3D"max-width: 100%; color: rgb(51, 51, 51=
+); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ub=
+untu, Helvetica, Arial, sans-serif; font-size: 14.5px; font-style: normal; =
+font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400=
+; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; =
+text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-wid=
+th: 0px; white-space: normal; text-decoration-thickness: initial; text-deco=
+ration-style: initial; text-decoration-color: initial; background-color: rg=
+b(255, 255, 255); box-sizing: border-box; user-select: inherit; scrollbar-c=
+olor: auto;" fr-original-style=3D"max-width: 100%; color: rgb(51, 51, 51); =
+font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubunt=
+u, Helvetica, Arial, sans-serif; font-size: 14.5px; font-style: normal; fon=
+t-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; l=
+etter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; tex=
+t-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width:=
+ 0px; white-space: normal; text-decoration-thickness: initial; text-decorat=
+ion-style: initial; text-decoration-color: initial; background-color: rgb(2=
+55, 255, 255); box-sizing: border-box; user-select: inherit; scrollbar-colo=
+r: auto;">o Web Developer<br style=3D"box-sizing: border-box; user-select: =
+inherit; scrollbar-color: auto;" fr-original-style=3D"box-sizing: border-bo=
+x; user-select: inherit; scrollbar-color: auto;">o Manual testing.</div><di=
+v style=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-sys=
+tem, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sa=
+ns-serif; font-size: 14.5px; font-style: normal; font-variant-ligatures: no=
+rmal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; =
+orphans: 2; text-align: start; text-indent: 0px; text-transform: none; wido=
+ws: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: norm=
+al; text-decoration-thickness: initial; text-decoration-style: initial; tex=
+t-decoration-color: initial; background-color: rgb(255, 255, 255); box-sizi=
+ng: border-box; user-select: inherit; scrollbar-color: auto;" fr-original-s=
+tyle=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-system=
+, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-=
+serif; font-size: 14.5px; font-style: normal; font-variant-ligatures: norma=
+l; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orp=
+hans: 2; text-align: start; text-indent: 0px; text-transform: none; widows:=
+ 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;=
+ text-decoration-thickness: initial; text-decoration-style: initial; text-d=
+ecoration-color: initial; background-color: rgb(255, 255, 255); box-sizing:=
+ border-box; user-select: inherit; scrollbar-color: auto;">&nbsp;</div><div=
+ style=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-syst=
+em, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, san=
+s-serif; font-size: 14.5px; font-style: normal; font-variant-ligatures: nor=
+mal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; o=
+rphans: 2; text-align: start; text-indent: 0px; text-transform: none; widow=
+s: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: norma=
+l; text-decoration-thickness: initial; text-decoration-style: initial; text=
+-decoration-color: initial; background-color: rgb(255, 255, 255); box-sizin=
+g: border-box; user-select: inherit; scrollbar-color: auto;" fr-original-st=
+yle=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-system,=
+ BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-s=
+erif; font-size: 14.5px; font-style: normal; font-variant-ligatures: normal=
+; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orph=
+ans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: =
+2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; =
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial; background-color: rgb(255, 255, 255); box-sizing: =
+border-box; user-select: inherit; scrollbar-color: auto;">Salary =E2=80=93 =
+25k - 30<span style=3D"font-size: 11pt; font-family: sans-serif, arial; box=
+-sizing: border-box; user-select: inherit; scrollbar-color: auto;" fr-origi=
+nal-style=3D"font-size: 11pt; font-family: sans-serif, arial; box-sizing: b=
+order-box; user-select: inherit; scrollbar-color: auto;">k</span><br style=
+=3D"box-sizing: border-box; user-select: inherit; scrollbar-color: auto;" f=
+r-original-style=3D"box-sizing: border-box; user-select: inherit; scrollbar=
+-color: auto;">Designation: Security Analyst</div><div style=3D"max-width: =
+100%; color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFon=
+t, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 1=
+4.5px; font-style: normal; font-variant-ligatures: normal; font-variant-cap=
+s: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align=
+: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0=
+px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-th=
+ickness: initial; text-decoration-style: initial; text-decoration-color: in=
+itial; background-color: rgb(255, 255, 255); box-sizing: border-box; user-s=
+elect: inherit; scrollbar-color: auto;" fr-original-style=3D"max-width: 100=
+%; color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, =
+&quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5=
+px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: =
+normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: s=
+tart; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;=
+ -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thick=
+ness: initial; text-decoration-style: initial; text-decoration-color: initi=
+al; background-color: rgb(255, 255, 255); box-sizing: border-box; user-sele=
+ct: inherit; scrollbar-color: auto;"><br style=3D"user-select: inherit; scr=
+ollbar-color: auto; box-sizing: border-box;" fr-original-style=3D"user-sele=
+ct: inherit; scrollbar-color: auto; box-sizing: border-box;"></div><div sty=
+le=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-system, =
+BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-se=
+rif; font-size: 14.5px; font-style: normal; font-variant-ligatures: normal;=
+ font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orpha=
+ns: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2=
+; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; t=
+ext-decoration-thickness: initial; text-decoration-style: initial; text-dec=
+oration-color: initial; background-color: rgb(255, 255, 255); box-sizing: b=
+order-box; user-select: inherit; scrollbar-color: auto;" fr-original-style=
+=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: -apple-system, Bl=
+inkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-seri=
+f; font-size: 14.5px; font-style: normal; font-variant-ligatures: normal; f=
+ont-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans=
+: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; =
+word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; tex=
+t-decoration-thickness: initial; text-decoration-style: initial; text-decor=
+ation-color: initial; background-color: rgb(255, 255, 255); box-sizing: bor=
+der-box; user-select: inherit; scrollbar-color: auto;">&nbsp; &nbsp;<strong=
+ style=3D"font-weight: 600; box-sizing: border-box; user-select: inherit; s=
+crollbar-color: auto;" fr-original-style=3D"font-weight: 600; box-sizing: b=
+order-box; user-select: inherit; scrollbar-color: auto;">Note:-</strong> <s=
+trong style=3D"font-weight: 600; box-sizing: border-box; user-select: inher=
+it; scrollbar-color: auto;" fr-original-style=3D"font-weight: 600; box-sizi=
+ng: border-box; user-select: inherit; scrollbar-color: auto;"><em style=3D"=
+box-sizing: border-box; user-select: inherit; scrollbar-color: auto;" fr-or=
+iginal-style=3D"box-sizing: border-box; user-select: inherit; scrollbar-col=
+or: auto;">This amount is refundable and 100% surety of job.</em></strong> =
+<strong style=3D"font-weight: 600; box-sizing: border-box; user-select: inh=
+erit; scrollbar-color: auto;" fr-original-style=3D"font-weight: 600; box-si=
+zing: border-box; user-select: inherit; scrollbar-color: auto;">&nbsp; &nbs=
+p; &nbsp; &nbsp; &nbsp;</strong></div><div style=3D"max-width: 100%; color:=
+ rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Seg=
+oe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5px; font-=
+style: normal; font-variant-ligatures: normal; font-variant-caps: normal; f=
+ont-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; tex=
+t-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-=
+text-stroke-width: 0px; white-space: normal; text-decoration-thickness: ini=
+tial; text-decoration-style: initial; text-decoration-color: initial; backg=
+round-color: rgb(255, 255, 255); box-sizing: border-box; user-select: inher=
+it; scrollbar-color: auto;" fr-original-style=3D"max-width: 100%; color: rg=
+b(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe =
+UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5px; font-sty=
+le: normal; font-variant-ligatures: normal; font-variant-caps: normal; font=
+-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-i=
+ndent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-tex=
+t-stroke-width: 0px; white-space: normal; text-decoration-thickness: initia=
+l; text-decoration-style: initial; text-decoration-color: initial; backgrou=
+nd-color: rgb(255, 255, 255); box-sizing: border-box; user-select: inherit;=
+ scrollbar-color: auto;"><strong style=3D"font-weight: 600; box-sizing: bor=
+der-box; user-select: inherit; scrollbar-color: auto;" fr-original-style=3D=
+"font-weight: 600; box-sizing: border-box; user-select: inherit; scrollbar-=
+color: auto;">&nbsp; <em style=3D"box-sizing: border-box; user-select: inhe=
+rit; scrollbar-color: auto;" fr-original-style=3D"box-sizing: border-box; u=
+ser-select: inherit; scrollbar-color: auto;">Pay Rs 2400/- for this service=
+s</em></strong>&nbsp;</div><div style=3D"max-width: 100%; color: rgb(51, 51=
+, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;=
+, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5px; font-style: norm=
+al; font-variant-ligatures: normal; font-variant-caps: normal; font-weight:=
+ 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0=
+px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke=
+-width: 0px; white-space: normal; text-decoration-thickness: initial; text-=
+decoration-style: initial; text-decoration-color: initial; background-color=
+: rgb(255, 255, 255); box-sizing: border-box; user-select: inherit; scrollb=
+ar-color: auto;" fr-original-style=3D"max-width: 100%; color: rgb(51, 51, 5=
+1); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, U=
+buntu, Helvetica, Arial, sans-serif; font-size: 14.5px; font-style: normal;=
+ font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 40=
+0; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px;=
+ text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-wi=
+dth: 0px; white-space: normal; text-decoration-thickness: initial; text-dec=
+oration-style: initial; text-decoration-color: initial; background-color: r=
+gb(255, 255, 255); box-sizing: border-box; user-select: inherit; scrollbar-=
+color: auto;"><br style=3D"box-sizing: border-box; user-select: inherit; sc=
+rollbar-color: auto;" fr-original-style=3D"box-sizing: border-box; user-sel=
+ect: inherit; scrollbar-color: auto;"></div><div style=3D"max-width: 100%; =
+color: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &qu=
+ot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5px;=
+ font-style: normal; font-variant-ligatures: normal; font-variant-caps: nor=
+mal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: star=
+t; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -w=
+ebkit-text-stroke-width: 0px; white-space: normal; text-decoration-thicknes=
+s: initial; text-decoration-style: initial; text-decoration-color: initial;=
+ background-color: rgb(255, 255, 255); box-sizing: border-box; user-select:=
+ inherit; scrollbar-color: auto;" fr-original-style=3D"max-width: 100%; col=
+or: rgb(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;=
+Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5px; fo=
+nt-style: normal; font-variant-ligatures: normal; font-variant-caps: normal=
+; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; =
+text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webk=
+it-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: =
+initial; text-decoration-style: initial; text-decoration-color: initial; ba=
+ckground-color: rgb(255, 255, 255); box-sizing: border-box; user-select: in=
+herit; scrollbar-color: auto;">Only those Candidates whose permanent addres=
+s or Parents Address or blood relatives address should belong to States/Reg=
+ion mentioned below are eligible:&nbsp;<br style=3D"box-sizing: border-box;=
+ user-select: inherit; scrollbar-color: auto;" fr-original-style=3D"box-siz=
+ing: border-box; user-select: inherit; scrollbar-color: auto;">Coastal Andh=
+ra Pradesh (Example : Visakhapatnam, Kakinada, Ahmedabad, &nbsp;Bangalore,C=
+hennai,Madurai,kolkata, Kandukur, Amalapuram)/ Karnataka/ Tamil Nadu, Mumba=
+i, Vapi Bangalore/Pune,Coimbatore,Nellore,Hyderabad.<br style=3D"box-sizing=
+: border-box; user-select: inherit; scrollbar-color: auto;" fr-original-sty=
+le=3D"box-sizing: border-box; user-select: inherit; scrollbar-color: auto;"=
+>Punjab/ Delhi / NCR/ Rajasthan/ North-Western Uttar Pradesh,Kakinada<br st=
+yle=3D"box-sizing: border-box; user-select: inherit; scrollbar-color: auto;=
+" fr-original-style=3D"box-sizing: border-box; user-select: inherit; scroll=
+bar-color: auto;"><br style=3D"box-sizing: border-box; user-select: inherit=
+; scrollbar-color: auto;" fr-original-style=3D"box-sizing: border-box; user=
+-select: inherit; scrollbar-color: auto;">Thanks &amp; Regards <strong styl=
+e=3D"font-weight: 600; box-sizing: border-box; user-select: inherit; scroll=
+bar-color: auto;" fr-original-style=3D"font-weight: 600; box-sizing: border=
+-box; user-select: inherit; scrollbar-color: auto;">Arjun Oberoi</strong>&n=
+bsp; &nbsp;<blockquote style=3D"margin: 0px 0px 0px 0.8ex; border-left: 1px=
+ solid rgb(204, 204, 204); padding-top: initial; padding-right: initial; pa=
+dding-bottom: initial; padding-left: 1ex; color: inherit; box-sizing: borde=
+r-box; user-select: inherit; scrollbar-color: auto; border-top-color: rgb(0=
+, 188, 212); border-right-color: rgb(0, 188, 212); border-bottom-color: rgb=
+(0, 188, 212);" fr-original-style=3D"margin: 0px 0px 0px 0.8ex; border-left=
+: 1px solid rgb(204, 204, 204); padding-top: initial; padding-right: initia=
+l; padding-bottom: initial; padding-left: 1ex; color: inherit; box-sizing: =
+border-box; user-select: inherit; scrollbar-color: auto; border-top-color: =
+rgb(0, 188, 212); border-right-color: rgb(0, 188, 212); border-bottom-color=
+: rgb(0, 188, 212);"><div style=3D"max-width: 100%; display: block; font-si=
+ze: 14.5px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Ubuntu, Helvetica, Arial, sans-serif; user-select: inherit; scrollba=
+r-color: auto; box-sizing: border-box;" fr-original-style=3D"max-width: 100=
+%; display: block; font-size: 14.5px; font-family: -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; user=
+-select: inherit; scrollbar-color: auto; box-sizing: border-box;"><div dir=
+=3D"auto" style=3D"max-width: 100%; display: block; user-select: inherit; s=
+crollbar-color: auto; box-sizing: border-box;" fr-original-style=3D"max-wid=
+th: 100%; display: block; user-select: inherit; scrollbar-color: auto; box-=
+sizing: border-box;"><br style=3D"box-sizing: border-box; user-select: inhe=
+rit; scrollbar-color: auto;" fr-original-style=3D"box-sizing: border-box; u=
+ser-select: inherit; scrollbar-color: auto;"></div></div></blockquote><tabl=
+e border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"word-break: ini=
+tial; border-collapse: collapse; line-height: 1em; margin: 0.5em auto; widt=
+h: 1025.49px; border-spacing: 0px; border-width: medium; border-style: none=
+; border-color: currentcolor; empty-cells: show; max-width: 100%; box-sizin=
+g: border-box; user-select: inherit; scrollbar-color: auto; border-image: i=
+nitial;" fr-original-style=3D"word-break: initial; border-collapse: collaps=
+e; line-height: 1em; margin: 0.5em auto; width: 1025.49px; border-spacing: =
+0px; border-width: medium; border-style: none; border-color: currentcolor; =
+empty-cells: show; max-width: 100%; box-sizing: border-box; user-select: in=
+herit; scrollbar-color: auto; border-image: initial;"><tbody style=3D"box-s=
+izing: border-box; user-select: inherit; scrollbar-color: auto;" fr-origina=
+l-style=3D"box-sizing: border-box; user-select: inherit; scrollbar-color: a=
+uto;"><tr style=3D"box-sizing: border-box; user-select: inherit; scrollbar-=
+color: auto;" fr-original-style=3D"box-sizing: border-box; user-select: inh=
+erit; scrollbar-color: auto;"><td style=3D"border-width: 1px 0px; border-st=
+yle: solid none; border-color: rgb(85, 85, 85) currentcolor rgb(170, 170, 1=
+70); padding: 0.4em 1em; min-width: 5px; box-sizing: border-box; scrollbar-=
+color: auto; user-select: text; border-image: initial;" fr-original-style=
+=3D"border-width: 1px 0px; border-style: solid none; border-color: rgb(85, =
+85, 85) currentcolor rgb(170, 170, 170); padding: 0.4em 1em; min-width: 5px=
+; box-sizing: border-box; scrollbar-color: auto; user-select: text; border-=
+image: initial;"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" st=
+yle=3D"word-break: initial; border-collapse: collapse; line-height: 1em; ma=
+rgin: 0.5em auto; width: 996.507px; border-spacing: 0px; border-width: medi=
+um; border-style: none; border-color: currentcolor; empty-cells: show; max-=
+width: 100%; box-sizing: border-box; user-select: inherit; scrollbar-color:=
+ auto; border-image: initial;" fr-original-style=3D"word-break: initial; bo=
+rder-collapse: collapse; line-height: 1em; margin: 0.5em auto; width: 996.5=
+07px; border-spacing: 0px; border-width: medium; border-style: none; border=
+-color: currentcolor; empty-cells: show; max-width: 100%; box-sizing: borde=
+r-box; user-select: inherit; scrollbar-color: auto; border-image: initial;"=
+><tbody style=3D"box-sizing: border-box; user-select: inherit; scrollbar-co=
+lor: auto;" fr-original-style=3D"box-sizing: border-box; user-select: inher=
+it; scrollbar-color: auto;"><tr style=3D"box-sizing: border-box; user-selec=
+t: inherit; scrollbar-color: auto;" fr-original-style=3D"box-sizing: border=
+-box; user-select: inherit; scrollbar-color: auto;"><td colspan=3D"2" style=
+=3D"border-width: 1px 0px; border-style: solid none; border-color: rgb(85, =
+85, 85) currentcolor rgb(170, 170, 170); padding: 0.4em 1em; min-width: 5px=
+; box-sizing: border-box; scrollbar-color: auto; user-select: text; border-=
+image: initial;" fr-original-style=3D"border-width: 1px 0px; border-style: =
+solid none; border-color: rgb(85, 85, 85) currentcolor rgb(170, 170, 170); =
+padding: 0.4em 1em; min-width: 5px; box-sizing: border-box; scrollbar-color=
+: auto; user-select: text; border-image: initial;"><strong style=3D"font-we=
+ight: 600; box-sizing: border-box; user-select: inherit; scrollbar-color: a=
+uto;" fr-original-style=3D"font-weight: 600; box-sizing: border-box; user-s=
+elect: inherit; scrollbar-color: auto;">Job Information</strong>&nbsp;</td>=
+</tr><tr style=3D"box-sizing: border-box; user-select: inherit; scrollbar-c=
+olor: auto;" fr-original-style=3D"box-sizing: border-box; user-select: inhe=
+rit; scrollbar-color: auto;"><td valign=3D"top" style=3D"border-width: 1px =
+0px; border-style: solid none; border-color: rgb(85, 85, 85) currentcolor r=
+gb(170, 170, 170); padding: 0.4em 1em; vertical-align: top; min-width: 5px;=
+ box-sizing: border-box; scrollbar-color: auto; user-select: text; border-i=
+mage: initial;" fr-original-style=3D"border-width: 1px 0px; border-style: s=
+olid none; border-color: rgb(85, 85, 85) currentcolor rgb(170, 170, 170); p=
+adding: 0.4em 1em; vertical-align: top; min-width: 5px; box-sizing: border-=
+box; scrollbar-color: auto; user-select: text; border-image: initial;"><str=
+ong style=3D"font-weight: 600; box-sizing: border-box; user-select: inherit=
+; scrollbar-color: auto;" fr-original-style=3D"font-weight: 600; box-sizing=
+: border-box; user-select: inherit; scrollbar-color: auto;">LOCATION</stron=
+g>&nbsp;</td><td valign=3D"top" style=3D"border-width: 1px 0px; border-styl=
+e: solid none; border-color: rgb(85, 85, 85) currentcolor rgb(170, 170, 170=
+); padding: 0.4em 1em; vertical-align: top; min-width: 5px; box-sizing: bor=
+der-box; scrollbar-color: auto; user-select: text; border-image: initial;" =
+fr-original-style=3D"border-width: 1px 0px; border-style: solid none; borde=
+r-color: rgb(85, 85, 85) currentcolor rgb(170, 170, 170); padding: 0.4em 1e=
+m; vertical-align: top; min-width: 5px; box-sizing: border-box; scrollbar-c=
+olor: auto; user-select: text; border-image: initial;"><span style=3D"font-=
+size: 11pt; font-family: sans-serif, arial; box-sizing: border-box;" fr-ori=
+ginal-style=3D"font-size: 11pt; font-family: sans-serif, arial;">Bangalore<=
+/span><br style=3D"user-select: inherit; scrollbar-color: auto; box-sizing:=
+ border-box;" fr-original-style=3D"user-select: inherit; scrollbar-color: a=
+uto; box-sizing: border-box;"></td></tr><tr style=3D"box-sizing: border-box=
+; user-select: inherit; scrollbar-color: auto;" fr-original-style=3D"box-si=
+zing: border-box; user-select: inherit; scrollbar-color: auto;"><td valign=
+=3D"top" style=3D"border-width: 1px 0px; border-style: solid none; border-c=
+olor: rgb(85, 85, 85) currentcolor rgb(170, 170, 170); padding: 0.4em 1em; =
+vertical-align: top; min-width: 5px; box-sizing: border-box; scrollbar-colo=
+r: auto; user-select: text; border-image: initial;" fr-original-style=3D"bo=
+rder-width: 1px 0px; border-style: solid none; border-color: rgb(85, 85, 85=
+) currentcolor rgb(170, 170, 170); padding: 0.4em 1em; vertical-align: top;=
+ min-width: 5px; box-sizing: border-box; scrollbar-color: auto; user-select=
+: text; border-image: initial;"><strong style=3D"font-weight: 600; box-sizi=
+ng: border-box; user-select: inherit; scrollbar-color: auto;" fr-original-s=
+tyle=3D"font-weight: 600; box-sizing: border-box; user-select: inherit; scr=
+ollbar-color: auto;">EXPERIENCE</strong>&nbsp;</td><td valign=3D"top" style=
+=3D"border-width: 1px 0px; border-style: solid none; border-color: rgb(85, =
+85, 85) currentcolor rgb(170, 170, 170); padding: 0.4em 1em; vertical-align=
+: top; min-width: 5px; box-sizing: border-box; scrollbar-color: auto; user-=
+select: text; border-image: initial;" fr-original-style=3D"border-width: 1p=
+x 0px; border-style: solid none; border-color: rgb(85, 85, 85) currentcolor=
+ rgb(170, 170, 170); padding: 0.4em 1em; vertical-align: top; min-width: 5p=
+x; box-sizing: border-box; scrollbar-color: auto; user-select: text; border=
+-image: initial;"><span style=3D"font-size: 11pt; font-family: sans-serif, =
+arial; box-sizing: border-box;" fr-original-style=3D"font-size: 11pt; font-=
+family: sans-serif, arial;">Fresher</span><br fr-original-style=3D"" style=
+=3D"user-select: inherit; scrollbar-color: var(--scrollbar-active-color) #0=
+000; box-sizing: border-box;"></td></tr><tr style=3D"box-sizing: border-box=
+; user-select: inherit; scrollbar-color: auto;" fr-original-style=3D"box-si=
+zing: border-box; user-select: inherit; scrollbar-color: auto;"><td valign=
+=3D"top" style=3D"border-width: 1px 0px; border-style: solid none; border-c=
+olor: rgb(85, 85, 85) currentcolor; padding: 0.4em 1em; vertical-align: top=
+; min-width: 5px; box-sizing: border-box; scrollbar-color: auto; user-selec=
+t: text; border-image: initial;" fr-original-style=3D"border-width: 1px 0px=
+; border-style: solid none; border-color: rgb(85, 85, 85) currentcolor; pad=
+ding: 0.4em 1em; vertical-align: top; min-width: 5px; box-sizing: border-bo=
+x; scrollbar-color: auto; user-select: text; border-image: initial;"><br st=
+yle=3D"box-sizing: border-box; user-select: inherit; scrollbar-color: auto;=
+" fr-original-style=3D"box-sizing: border-box; user-select: inherit; scroll=
+bar-color: auto;"></td><td style=3D"border-width: 1px 0px; border-style: so=
+lid none; border-color: rgb(85, 85, 85) currentcolor; padding: 0.4em 1em; m=
+in-width: 5px; box-sizing: border-box; scrollbar-color: auto; user-select: =
+text; border-image: initial;" fr-original-style=3D"border-width: 1px 0px; b=
+order-style: solid none; border-color: rgb(85, 85, 85) currentcolor; paddin=
+g: 0.4em 1em; min-width: 5px; box-sizing: border-box; scrollbar-color: auto=
+; user-select: text; border-image: initial;"><br style=3D"box-sizing: borde=
+r-box; user-select: inherit; scrollbar-color: auto;" fr-original-style=3D"b=
+ox-sizing: border-box; user-select: inherit; scrollbar-color: auto;"></td><=
+/tr></tbody></table></td></tr><tr style=3D"box-sizing: border-box; user-sel=
+ect: inherit; scrollbar-color: auto;" fr-original-style=3D"box-sizing: bord=
+er-box; user-select: inherit; scrollbar-color: auto;"><td style=3D"border-w=
+idth: 0px 0px 1px; border-style: none none solid; border-color: currentcolo=
+r currentcolor rgb(85, 85, 85); padding: 0.4em 1em; min-width: 5px; box-siz=
+ing: border-box; scrollbar-color: auto; user-select: text; border-image: in=
+itial;" fr-original-style=3D"border-width: 0px 0px 1px; border-style: none =
+none solid; border-color: currentcolor currentcolor rgb(85, 85, 85); paddin=
+g: 0.4em 1em; min-width: 5px; box-sizing: border-box; scrollbar-color: auto=
+; user-select: text; border-image: initial;">This mail has been sent by one=
+ of the employers (Employer name: <strong style=3D"font-weight: 600; box-si=
+zing: border-box; user-select: inherit; scrollbar-color: auto;" fr-original=
+-style=3D"font-weight: 600; box-sizing: border-box; user-select: inherit; s=
+crollbar-color: auto;">HCL Technologies Ltd</strong>.) accessing the servic=
+es of <a href=3D"mailto:naukri.jobcareer@Yandex.com" title=3D"mailto:naukri=
+.jobcareer@Yandex.com" target=3D"_blank" style=3D"color: rgb(33, 112, 244);=
+ text-decoration: rgb(33, 112, 244); background: rgba(0, 0, 0, 0); outline:=
+ none; box-sizing: border-box; scrollbar-color: auto; cursor: pointer; tran=
+sition: all; user-select: auto;" fr-original-style=3D"color: rgb(33, 112, 2=
+44); text-decoration: rgb(33, 112, 244); background: rgba(0, 0, 0, 0); outl=
+ine: none; box-sizing: border-box; scrollbar-color: auto; cursor: pointer; =
+transition: all; user-select: auto;">info@naukrijobs.co</a>. Naukri is comm=
+itted to protecting the privacy of our users and our =E2=80=9CTerms of Use=
+=E2=80=9D prohibit.<span style=3D"font-size: 11pt; font-family: sans-serif,=
+ arial; box-sizing: border-box;" fr-original-style=3D"font-size: 11pt; font=
+-family: sans-serif, arial; box-sizing: border-box;">=E2=80=8B</span></td><=
+/tr></tbody></table></div><div fr-original-style=3D"" style=3D"user-select:=
+ inherit; scrollbar-color: var(--scrollbar-active-color) #0000; box-sizing:=
+ border-box;"><br fr-original-style=3D"" style=3D"user-select: inherit; scr=
+ollbar-color: var(--scrollbar-active-color) #0000; box-sizing: border-box;"=
+></div><div style=3D"max-width: 100%; color: rgb(51, 51, 51); font-family: =
+-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Ubuntu, Helvetica,=
+ Arial, sans-serif; font-size: 14.5px; font-style: normal; font-variant-lig=
+atures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing=
+: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: =
+none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-s=
+pace: normal; background-color: rgb(255, 255, 255); text-decoration-thickne=
+ss: initial; text-decoration-style: initial; text-decoration-color: initial=
+; user-select: inherit; scrollbar-color: var(--scrollbar-active-color) #000=
+0; box-sizing: border-box;" fr-original-style=3D"max-width: 100%; color: rg=
+b(51, 51, 51); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe =
+UI&quot;, Ubuntu, Helvetica, Arial, sans-serif; font-size: 14.5px; font-sty=
+le: normal; font-variant-ligatures: normal; font-variant-caps: normal; font=
+-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-i=
+ndent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-tex=
+t-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 2=
+55); text-decoration-thickness: initial; text-decoration-style: initial; te=
+xt-decoration-color: initial;"><br fr-original-style=3D"" style=3D"user-sel=
+ect: inherit; scrollbar-color: var(--scrollbar-active-color) #0000; box-siz=
+ing: border-box;"><div dir=3D"ltr" style=3D"max-width: 100%; user-select: i=
+nherit; scrollbar-color: var(--scrollbar-active-color) #0000; box-sizing: b=
+order-box;" fr-original-style=3D"max-width: 100%;"><br fr-original-style=3D=
+"" style=3D"user-select: inherit; scrollbar-color: var(--scrollbar-active-c=
+olor) #0000; box-sizing: border-box;"></div></div><img class=3D"flm-open" w=
+idth=3D"0" height=3D"0" style=3D"border:0;width:0;height:0;" src=3D"https:/=
+/rtt-east.riva.co/dc/t/mo/v2?t=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJwI=
+joiMTAwMyA5NzgwMTE1IG1hbmljaGFuZC5ndXB0YS5jb250YWN0QGdtYWlsLmNvbSBmY2UwODI3=
+MmQzNTAyYWVkZTY3ZWFhNjg5YmEzZjM3ZSA0NDUwNTg4NDQ5NjY0MjA1MCAxID8gMjEzNTgyIiw=
+iZXhwIjoxNzk1NTkyNTQzfQ.LrAzlIxvWaynpLasuev8voWFP1vS1_0EjZD2tI4RofL3w20roE-=
+2OD8S-YDBEL0A6AduLdSFMp5EECshV8b9vA&requestId=3Dw_29074210_SMR_50_875_aamt"=
+>
+------=_Part_5919377_2012165369.1780040543650--
+
+------=_Part_5919378_1564832370.1780040543650
+Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document; 
+	name="#Candidate Application Form (1).docx"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; 
+	filename="#Candidate Application Form (1).docx"
+Content-ID: <cf93bf1e-f5ba-473e-8820-022bab287df3>
+X-Attachment-Id: cf93bf1e-f5ba-473e-8820-022bab287df3
+
+UEsDBBQABgAIAAAAIQBY/q3InwEAAFoJAAATAAgCW0NvbnRlbnRfVHlwZXNdLnhtbCCiBAIooAAC
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADE
+VltrwjAUfh/sP5S8jjbqYIxh9WGXx02Y+wFZc1rD2iQkx9u/34lVGaJWpsWXQnPOdzspTfrDRVVG
+M3BeGZ2ybtJhEejMSKWLlH2N3+JHFnkUWorSaEjZEjwbDm5v+uOlBR8RWvuUTRDtE+c+m0AlfGIs
+aKrkxlUC6dUV3IrsRxTAe53OA8+MRtAYY+Bgg/4L5GJaYvS6oOXaiYPSs+i5bgxaKRPWlioTSHU+
+03JHJV4rJIRc9fiJsv6OGhjfqxAqhwUO4wqV7+BUFZKFdUJ80DCdkhCNhMN3UVGdz42TXJpsWhEm
+OS68J5nJc5XBFh/YrDMZeE+7VJXJtlIJpTeJD/rwuCzBX95FzdssD4gEaMPAmrnRwhy+P1tz8Ye8
+0UhuDGqDbezGlrrRBGjZkocNc6OFCQgJrnt5BzXxifq9q+mHzWolf018on4L+U/Ur8d0f+X5t6B/
+8vxJT3yX0IaDNXWjCaSzG+rn+V/iiuaYJHWOnLGe7gLuH7E3h31AxxTYgkN1/E+zVSTqs/NBuA9I
+kHu0+epmNPgFAAD//wMAUEsDBBQABgAIAAAAIQAekRq37wAAAE4CAAALAAgCX3JlbHMvLnJlbHMg
+ogQCKKAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAArJLBasMwDEDvg/2D0b1R2sEYo04vY9DbGNkHCFtJTBPb2GrX/v082NgCXelhR8vS05PQ
+enOcRnXglF3wGpZVDYq9Cdb5XsNb+7x4AJWFvKUxeNZw4gyb5vZm/cojSSnKg4tZFYrPGgaR+IiY
+zcAT5SpE9uWnC2kiKc/UYySzo55xVdf3mH4zoJkx1dZqSFt7B6o9Rb6GHbrOGX4KZj+xlzMtkI/C
+3rJdxFTqk7gyjWop9SwabDAvJZyRYqwKGvC80ep6o7+nxYmFLAmhCYkv+3xmXBJa/ueK5hk/Nu8h
+WbRf4W8bnF1B8wEAAP//AwBQSwMEFAAGAAgAAAAhAMWqsptAAQAAPQcAABwACAF3b3JkL19yZWxz
+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
+juLyQdGtvPsDRqcBwwNgTHAaMdoTiloPOym8KW/XAZNeOpZ4JMFdiQ6WU35SjNl6+wFzTFcJG4Kk
+vrb5XtvH8Hp/10XaOWyeHm44UP9+wfQTAAD//wMAUEsBAi0AFAAGAAgAAAAhAFj+rcifAQAAWgkA
+ABMAAAAAAAAAAAAAAAAAAAAAAFtDb250ZW50X1R5cGVzXS54bWxQSwECLQAUAAYACAAAACEAHpEa
+t+8AAABOAgAACwAAAAAAAAAAAAAAAADYAwAAX3JlbHMvLnJlbHNQSwECLQAUAAYACAAAACEAxaqy
+m0ABAAA9BwAAHAAAAAAAAAAAAAAAAAD4BgAAd29yZC9fcmVscy9kb2N1bWVudC54bWwucmVsc1BL
+AQItABQABgAIAAAAIQC+rqGg+BQAAPGUAQARAAAAAAAAAAAAAAAAAHoJAAB3b3JkL2RvY3VtZW50
+LnhtbFBLAQItABQABgAIAAAAIQBGYKDg4QEAAJgGAAASAAAAAAAAAAAAAAAAAKEeAAB3b3JkL2Zv
+b3Rub3Rlcy54bWxQSwECLQAUAAYACAAAACEA34vs07IBAACiBQAAEAAAAAAAAAAAAAAAAACyIAAA
+d29yZC9mb290ZXIzLnhtbFBLAQItABQABgAIAAAAIQC176B+uQAAACEBAAAbAAAAAAAAAAAAAAAA
+AJIiAAB3b3JkL19yZWxzL2hlYWRlcjMueG1sLnJlbHNQSwECLQAUAAYACAAAACEAte+gfrkAAAAh
+AQAAGwAAAAAAAAAAAAAAAACEIwAAd29yZC9fcmVscy9oZWFkZXIyLnhtbC5yZWxzUEsBAi0AFAAG
+AAgAAAAhALXvoH65AAAAIQEAABsAAAAAAAAAAAAAAAAAdiQAAHdvcmQvX3JlbHMvaGVhZGVyMS54
+bWwucmVsc1BLAQItABQABgAIAAAAIQD1cvWQrgMAADgKAAAQAAAAAAAAAAAAAAAAAGglAAB3b3Jk
+L2hlYWRlcjMueG1sUEsBAi0AFAAGAAgAAAAhAN+L7NOyAQAAogUAABAAAAAAAAAAAAAAAAAARCkA
+AHdvcmQvZm9vdGVyMi54bWxQSwECLQAUAAYACAAAACEA34vs07IBAACiBQAAEAAAAAAAAAAAAAAA
+AAAkKwAAd29yZC9mb290ZXIxLnhtbFBLAQItABQABgAIAAAAIQBgcpW8rwMAADgKAAAQAAAAAAAA
+AAAAAAAAAAQtAAB3b3JkL2hlYWRlcjIueG1sUEsBAi0AFAAGAAgAAAAhAMIVucfgAQAAkgYAABEA
+AAAAAAAAAAAAAAAA4TAAAHdvcmQvZW5kbm90ZXMueG1sUEsBAi0AFAAGAAgAAAAhAKMbyCmtAwAA
+OAoAABAAAAAAAAAAAAAAAAAA8DIAAHdvcmQvaGVhZGVyMS54bWxQSwECLQAUAAYACAAAACEAlrWt
+4vEFAABQGwAAFQAAAAAAAAAAAAAAAADLNgAAd29yZC90aGVtZS90aGVtZTEueG1sUEsBAi0ACgAA
+AAAAAAAhAGmCG2pDDwAAQw8AABUAAAAAAAAAAAAAAAAA7zwAAHdvcmQvbWVkaWEvaW1hZ2UxLmdp
+ZlBLAQItABQABgAIAAAAIQBQ8tFzwQQAAFcOAAARAAAAAAAAAAAAAAAAAGVMAAB3b3JkL3NldHRp
+bmdzLnhtbFBLAQItABQABgAIAAAAIQDevlFDRAIAAGYJAAASAAAAAAAAAAAAAAAAAFVRAAB3b3Jk
+L2ZvbnRUYWJsZS54bWxQSwECLQAUAAYACAAAACEAQ8P33NsBAADcAwAAEAAAAAAAAAAAAAAAAADJ
+UwAAZG9jUHJvcHMvYXBwLnhtbFBLAQItABQABgAIAAAAIQCmnXoNTAEAAHYCAAARAAAAAAAAAAAA
+AAAAANpWAABkb2NQcm9wcy9jb3JlLnhtbFBLAQItABQABgAIAAAAIQB6IPBRyQwAALR9AAAPAAAA
+AAAAAAAAAAAAAF1ZAAB3b3JkL3N0eWxlcy54bWxQSwECLQAUAAYACAAAACEAsT+4YiIBAABOAgAA
+FAAAAAAAAAAAAAAAAABTZgAAd29yZC93ZWJTZXR0aW5ncy54bWxQSwUGAAAAABcAFwDSBQAAp2cA
+AAAA
+
+------=_Part_5919378_1564832370.1780040543650--
