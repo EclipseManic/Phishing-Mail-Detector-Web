@@ -126,12 +126,6 @@ Phishing-Mail-Detector-Web/
 - **Single-user, local-first design.** Built to run on one machine for one analyst via Flask's development server — not load-tested or hardened for multi-tenant/public-facing deployment.
 - **Git history starts from a single upload commit** — earlier iteration history isn't preserved in this repo.
 
-## Roadmap
-
-- [ ] Unit tests for `core/analyzers.py` and `core/utils.py`
-- [ ] Production WSGI server option (gunicorn/waitress) for non-local use
-- [ ] Structured logging across the analysis pipeline
-- [ ] Rename `requirements.py` → `requirements.txt`
 
 ## Notes
 
