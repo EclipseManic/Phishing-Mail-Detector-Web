@@ -4,6 +4,10 @@ An enterprise-style phishing investigation tool with a Flask backend and browser
 
 Built as a SOC-analyst-facing tool, not a toy classifier — the scoring model, brand/domain map, and keyword corpora are hand-tuned against real phishing patterns rather than a black-box ML score.
 
+## Status
+
+Actively developed, single-maintainer project. Core analysis pipeline is functional and in daily use for personal investigation work. Not yet covered by an automated test suite — treat as a research/analyst tool rather than a hardened, deployment-ready service. See [Known Limitations](#known-limitations) below.
+
 ## What it actually checks
 
 **Header & authentication forensics**
@@ -40,7 +44,7 @@ Built as a SOC-analyst-facing tool, not a toy classifier — the scoring model, 
 
 ## Tech Stack
 
-- **Backend:** Flask (Python), background threading for async scan tasks
+- **Backend:** Flask (Python), background threading for async scan tasks, Flask's built-in dev server
 - **Storage:** SQLite (`data/scans.db`) — scan history with list/view/delete
 - **Frontend:** Single-page HTML/JS UI (`templates/index.html`) with live step-by-step progress polling
 - **Optional integrations:** VirusTotal API, urlscan.io API, WHOIS, Tesseract OCR + pyzbar (QR), oletools (macros)
@@ -62,6 +66,7 @@ git clone https://github.com/EclipseManic/Phishing-Mail-Detector-Web.git
 cd Phishing-Mail-Detector-Web
 pip install -r requirements.py
 ```
+> Note: dependencies are listed in `requirements.py` (plain pip-requirements format despite the `.py` extension) — `pip install -r` reads it the same as a `.txt` file.
 
 ### Configuration (optional)
 ```bash
@@ -114,6 +119,19 @@ Phishing-Mail-Detector-Web/
 ├── static/               # Assets
 └── test_files/           # Sample/test .eml files
 ```
+
+## Known Limitations
+
+- **No automated test suite yet.** The analysis modules are functionally verified through manual/real-world scans, not unit tests. A pytest suite covering the pure functions in `analyzers.py` and `utils.py` is planned.
+- **Single-user, local-first design.** Built to run on one machine for one analyst via Flask's development server — not load-tested or hardened for multi-tenant/public-facing deployment.
+- **Git history starts from a single upload commit** — earlier iteration history isn't preserved in this repo.
+
+## Roadmap
+
+- [ ] Unit tests for `core/analyzers.py` and `core/utils.py`
+- [ ] Production WSGI server option (gunicorn/waitress) for non-local use
+- [ ] Structured logging across the analysis pipeline
+- [ ] Rename `requirements.py` → `requirements.txt`
 
 ## Notes
 
