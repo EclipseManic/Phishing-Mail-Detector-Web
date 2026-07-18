@@ -1,5 +1,7 @@
 # Phishing Mail Detector — Web
 
+<img width="1536" height="792" alt="Dashboard" src="https://github.com/user-attachments/assets/d22b07c6-fb4f-4542-a3f0-dd85a0417ebe" />
+
 An enterprise-style phishing investigation tool with a Flask backend and browser UI. Drop in a raw `.eml` file and get back a full forensic breakdown: authentication verification, sender/domain spoofing checks, URL and attachment analysis, threat intel enrichment, a weighted 0–10 risk score, and MITRE ATT&CK mapping — all with live progress tracking and persistent scan history.
 
 Built as a SOC-analyst-facing tool, not a toy classifier — the scoring model, brand/domain map, and keyword corpora are hand-tuned against real phishing patterns rather than a black-box ML score.
