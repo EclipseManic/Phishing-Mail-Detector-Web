@@ -1,12 +1,11 @@
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/d22b07c6-fb4f-4542-a3f0-dd85a0417ebe" alt="Phishing Mail Detector Dashboard" width="900" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);"/>
-</div>
-
 <br>
 
 <h1 align="center">
   🕵️ Phishing Mail Detector
 </h1>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d22b07c6-fb4f-4542-a3f0-dd85a0417ebe" alt="Phishing Mail Detector Dashboard" width="900" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);"/>
+</div>
 
 <p align="center">
   <b>Enterprise-Grade Forensic Email Investigation Platform</b><br>
