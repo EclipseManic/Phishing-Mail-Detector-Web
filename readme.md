@@ -1,5 +1,7 @@
 # Malware Analyzer
 
+<img width="1536" height="790" alt="Dashboard" src="https://github.com/user-attachments/assets/7307e33c-9bce-4045-b227-362c68d80e41" />
+
 **Multi-format malware triage engine** — static analysis, YARA scanning, sandbox enrichment, and category-aware risk scoring in a self-hosted web dashboard.
 
 Analyze PE (Windows), ELF (Linux), Mach-O (macOS), APK (Android), Office documents, PDFs, scripts, and archives through a unified pipeline. Offline heuristics and optional online threat intelligence feeds produce a normalized risk score with full evidence breakdown.
